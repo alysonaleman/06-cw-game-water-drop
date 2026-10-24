@@ -1,0 +1,225 @@
+/* General Reset & Body Styling */
+body {
+    font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f4f6f8;
+    color: #1a1a1a;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Game Wrapper Box */
+.game-wrapper {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Typography & Branding */
+.game-title {
+    color: #1a1a1a;
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 5px;
+}
+
+.game-tagline {
+    color: #666;
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+/* Difficulty Panel Styling */
+.difficulty-panel {
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.difficulty-panel select {
+    font-family: 'Montserrat', sans-serif;
+    padding: 6px 12px;
+    font-size: 0.95rem;
+    border-radius: 6px;
+    border: 2px solid #2E9DF7;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+/* Score Panel */
+.score-panel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f8f9fa;
+    padding: 12px 20px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    font-size: 1.05rem;
+}
+
+/* Milestone Alert Banner */
+.milestone-banner {
+    background-color: #2E9DF7;
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 6px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    animation: pop 0.3s ease-in-out;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Charity: Water Yellow Button */
+#start-btn {
+    background-color: #FFC200;
+    color: #1a1a1a;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+#start-btn:hover {
+    background-color: #e5ae00;
+    transform: scale(1.03);
+}
+
+/* Game Play Area Container with Solid Yellow Border */
+#game-container {
+    position: relative;
+    width: 100%;
+    height: 380px;
+    background-color: #eef2f5;
+    border: 3px solid #FFC200; /* Distinct Charity: Water Yellow Container Border */
+    border-radius: 10px;
+    overflow: hidden; /* Encloses drops inside box */
+    box-sizing: border-box;
+    margin-bottom: 15px;
+}
+
+.controls {
+    margin-top: 10px;
+}
+
+/* Clean Water Drop Base Styling */
+.water-drop {
+    position: absolute;
+    top: -60px;
+    background: radial-gradient(circle at 30% 30%, #4facfe 0%, #00f2fe 100%);
+    border-radius: 50% 50% 50% 0;
+    transform: rotate(-45deg);
+    cursor: pointer;
+    animation-name: fall;
+    animation-timing-function: linear;
+    transition: transform 0.1s ease;
+}
+
+.water-drop:active {
+    transform: rotate(-45deg) scale(0.85);
+}
+
+/* LevelUp #1: Dirty Water Drops */
+.water-drop.bad-drop {
+    background: radial-gradient(circle at 30% 30%, #8b5a2b 0%, #4a2e16 100%);
+    border: 2px solid #331f0e;
+}
+
+/* Falling Animation */
+@keyframes fall {
+    0% {
+        top: -60px;
+    }
+    100% {
+        top: 360px;
+    }
+}
+
+/* Game Over Screen Styling */
+.game-over-screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 20px;
+}
+
+.game-over-screen h2 {
+    color: #1a1a1a;
+    margin-bottom: 10px;
+}
+
+.end-message {
+    margin-top: 15px;
+    font-size: 1.1rem;
+    color: #0066cc;
+    font-weight: 500;
+}
+
+/* LevelUp #3: Confetti Celebration Styling */
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: 0;
+    opacity: 0.8;
+    animation: confetti-fall 3s linear infinite;
+}
+
+@keyframes confetti-fall {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(380px) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+/* On-Brand charity: water Footer */
+.cw-footer {
+    background-color: #114B7A;
+    color: #ffffff;
+    width: 100%;
+    max-width: 500px;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.cw-footer p {
+    margin: 0 0 8px 0;
+}
+
+.footer-links a {
+    color: #FFC200;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+@keyframes pop {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Drop Game - charity: water</title>
+    <!-- On-brand font: Montserrat (resembles Proxima Nova) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-wrapper">
+        <h1 class="game-title">Water Drop 💧</h1>
+        <p class="game-tagline">Catch the clean water drops for charity: water! Avoid the contaminated ones.</p>
+        
+        <!-- Difficulty Selector -->
+        <div class="difficulty-panel">
+            <label for="difficulty">Difficulty: </label>
+            <select id="difficulty">
+                <option value="easy">Easy (30s, Slow)</option>
+                <option value="normal" selected>Normal (20s, Medium)</option>
+                <option value="hard">Hard (15s, Fast)</option>
+            </select>
+        </div>
+
+        <div class="score-panel">
+            <div class="score">Score: <span id="score">0</span></div>
+            <div class="timer">Time: <span id="time">20</span>s</div>
+            <div class="target">Goal: <span id="target-score">15</span></div>
+        </div>
+
+        <!-- Milestone Alert Banner -->
+        <div id="milestone-banner" class="milestone-banner hidden"></div>
+
+        <!-- Play Area -->
+        <div id="game-container"></div>
+
+        <div class="controls">
+            <button id="start-btn">Start Game</button>
+        </div>
+    </div>
+
+    <!-- On-Brand charity: water Footer -->
+    <footer class="cw-footer">
+        <p>Inspired by <strong>charity: water</strong> — Bringing clean and safe water to people around the world.</p>
+        <div class="footer-links">
+            <a href="https://www.charitywater.org/" target="_blank" rel="noopener noreferrer">Official Website</a> | 
+            <a href="https://www.charitywater.org/donate" target="_blank" rel="noopener noreferrer">Donate Now 💛</a>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
